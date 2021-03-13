@@ -40,6 +40,8 @@ void onTick(CBlob@ this)
 		this.set_u8("filled", splashes);
 		this.set_u8("water_delay", 30);
 		this.getSprite().SetAnimation("full");
+		this.SetInventoryIcon(this.getSprite().getConsts().filename, 1, Vec2f(16, 16));
+		this.setInventoryName("Filled Bucket");
 	}
 
 	if (filled != 0)
@@ -146,6 +148,8 @@ void TakeWaterCount(CBlob@ this)
 	{
 		filled = 0;
 		this.getSprite().SetAnimation("empty");
+		this.SetInventoryIcon(this.getSprite().getConsts().filename, 0, Vec2f(16, 16));
+		this.setInventoryName("Bucket");
 	}
 	this.set_u8("filled", filled);
 }
